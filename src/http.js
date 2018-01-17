@@ -54,12 +54,17 @@ export default class Http {
           if (request.status.toString() === HTTP_STATUS.OK) {
             resolve(response);
           } else {
-            reject(
-              new Error({
-                body: response,
-                status: request.status
-              })
-            );
+            // reject(
+            //   new Error({
+            //     body: response,
+            //     status: request.status
+            //   })
+            // );
+            reject({
+              name: 'StatusCodeError',
+              error: response,
+              status: request.status
+            });
           }
         } catch (e) {
           reject(
