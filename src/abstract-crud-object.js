@@ -216,9 +216,13 @@ export class AbstractCrudObject extends AbstractObject {
     if (params == null) {
       params = {};
     }
+    if (!params['locale']) {
+      params['locale'] = this._api.locale;
+    }
     if (fields) {
       params['fields'] = fields.join(',');
     }
+
     const sourceObject = this;
     const cursor = new Cursor(sourceObject, targetClass, params, endpoint);
     if (fetchFirstPage) {
