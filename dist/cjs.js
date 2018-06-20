@@ -1599,6 +1599,9 @@ var AbstractCrudObject = function (_AbstractObject) {
       if (params == null) {
         params = {};
       }
+      if (!params['locale']) {
+         params['locale'] = this._api.locale;
+        }
       if (fields) {
         params['fields'] = fields.join(',');
       }
