@@ -416,7 +416,7 @@ var FacebookAdsApi = function () {
   createClass(FacebookAdsApi, null, [{
     key: 'VERSION',
     get: function get() {
-      return 'v3.2';
+      return 'v3.3';
     }
   }, {
     key: 'GRAPH',
